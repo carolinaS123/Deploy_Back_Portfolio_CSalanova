@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("skills")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolioargprocsalanova.web.app")
 public class CSkills {
         @Autowired
     private SSkills skillsServ;
@@ -54,17 +54,4 @@ public class CSkills {
        skillsServ.crearSkill(habil);
        return habil;
     }
-    
-/////////////////  Para editar un skill  ///////////////////Este no funciona
- /*   @PutMapping("/editar/{id}")
-    public Skills editarSkill(@PathVariable ("id") Long id, @RequestParam("skill") String nuevoSkill, @RequestParam("porcentaje") int nuevoPorcentaje)
-    {
-        //se busca el skill
-        Skills habil = skillsServ.buscarSkill(id);
-        habil.setSkill(nuevoSkill);
-        habil.setPorcentaje(nuevoPorcentaje);
-        skillsServ.crearSkill(habil);
-        //retorna el nuevo skill
-        return habil;
-    }*/
 }
